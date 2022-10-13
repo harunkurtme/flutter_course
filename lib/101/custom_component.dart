@@ -20,6 +20,11 @@ class _ColorUtility{
   final Color white =Colors.white;
 }
 
+class _PaddingUtility{
+  final EdgeInsets normalpadding = EdgeInsets.all(8.0);
+  final EdgeInsets normal2xpadding = EdgeInsets.all(8.0);
+}
+
 class CustomFoodButton extends StatelessWidget with _ColorUtility{
   CustomFoodButton({Key? key, required this.title}) : super(key: key);
   final String title;
