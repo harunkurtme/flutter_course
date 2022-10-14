@@ -8,9 +8,11 @@ class Custom_Component extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-        child: CustomFoodButton(title: "Food",)
-            ),
+      body: Column(
+        children: [
+          CustomFoodButton(title: "Food",onpressed: (){},),
+        ],
+      ),
     );
   } 
 }
@@ -26,14 +28,15 @@ class _PaddingUtility{
 }
 
 class CustomFoodButton extends StatelessWidget with _ColorUtility{
-  CustomFoodButton({Key? key, required this.title}) : super(key: key);
+  CustomFoodButton({Key? key, required this.title, required this.onpressed}) : super(key: key);
   final String title;
+  final void Function() onpressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
           style: ElevatedButton.styleFrom(primary: white,shape:StadiumBorder() ),
-          onPressed: (){}, 
+          onPressed: onpressed, 
           child: Text(
             title.toString(),
             style: Theme.of(context).textTheme.subtitle1?.copyWith(color: redColor),
