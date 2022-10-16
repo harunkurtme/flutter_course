@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 
 class TextFliedLearn extends StatefulWidget {
@@ -16,6 +17,11 @@ class _TextFliedLearnState extends State<TextFliedLearn> {
       body: Center(
         child: TextField(
           maxLength: 20,
+          autofillHints: [AutofillHints.email],
+          textInputAction: TextInputAction.next,
+          maxLines: 4,
+          minLines: 2,
+          keyboardType: TextInputType.emailAddress,
           buildCounter: (context, {int? currentLength,bool? isFocused, maxLength}) {
             return AnimatedContainer(
               duration: const Duration(milliseconds: 200),
