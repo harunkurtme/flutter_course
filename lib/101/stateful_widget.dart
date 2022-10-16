@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/product/elevatedButtonProduct.dart';
 
 class StatefulLearn extends StatefulWidget {
   StatefulLearn({Key? key}) : super(key: key);
@@ -25,10 +26,15 @@ class _StatefulLearnState extends State<StatefulLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text(
-          "value $val"
-        ),
+      body: Column(
+        children: [
+          Container(
+            child: Text(
+              "value $val"
+            ),
+          ),
+          ProductButton()
+        ],
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
