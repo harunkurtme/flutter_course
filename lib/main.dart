@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/101/custom_component.dart';
+import 'package:flutter_course/101/list_tile_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.blue),
         primarySwatch: Colors.blue,
+        listTileTheme: ListTileThemeData(
+          selectedColor: Colors.black,
+          contentPadding: EdgeInsets.all(8.0)
+        )
       ),
-      home: Custom_Component(),
+      home: ListTileLearn(),
     );
   }
 }
