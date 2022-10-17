@@ -16,11 +16,7 @@ class _StatefulLifeCycleState extends State<StatefulLifeCycle> {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title.toString()),),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-              ElevatedButton(onPressed: (){}, child:Text("")),
-          ],
+        child: widget.title.length.isOdd ? ElevatedButton(onPressed: (){}, child: Text("")) : TextButton(onPressed: (){}, child: Text(""))
         ),
       ),
     );
