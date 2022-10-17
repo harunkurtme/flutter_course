@@ -16,7 +16,7 @@ class _ColorDemosState extends State<ColorDemos> {
     Color? background;
     void backgroundUpdate(Color colorbackgorund){
       setState(() {
-        
+        background=colorbackgorund;
       });
     }
 
@@ -28,7 +28,7 @@ class _ColorDemosState extends State<ColorDemos> {
           } else if(val ==_SelectionITem.green.index) {
           }
         },
-        backgroundColor: background,
+        backgroundColor: background ?? Colors.amber,
         items: [
         BottomNavigationBarItem(icon: _ContainerColor(
           color: Colors.red,
