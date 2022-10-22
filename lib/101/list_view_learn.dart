@@ -44,3 +44,17 @@ class _ListViewLearnState extends State<ListViewLearn> {
     );
   }
 }
+
+class _ListViewCard extends StatefulWidget {
+  _ListViewCard({Key? key}) : super(key: key);
+
+  @override
+  State<_ListViewCard> createState() => __ListViewCardState();
+}
+
+class __ListViewCardState extends State<_ListViewCard> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
