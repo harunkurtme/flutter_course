@@ -45,7 +45,13 @@ class _AnimatedLearn202State extends State<AnimatedLearn202> with TickerProvider
       body: Column(
         children: [
           animatedCrossFade(),
-          AnimatedIcon(icon: AnimatedIcons.add_event, progress: _animationController,)
+          AnimatedIcon(icon: AnimatedIcons.add_event, progress: _animationController,),
+          AnimatedContainer(duration: _ConstDuration.duration,
+          height: MediaQuery.of(context).size.width*0.2,
+          width: MediaQuery.of(context).size.height*0.2,
+          color: _isVisible ? Colors.red:Colors.green,
+          margin: EdgeInsets.all(8.0),
+          )
         ],
       ),
     );
