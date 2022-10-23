@@ -7,8 +7,19 @@ class AnimatedLearn202 extends StatefulWidget {
   State<AnimatedLearn202> createState() => _AnimatedLearn202State();
 }
 
-class _AnimatedLearn202State extends State<AnimatedLearn202> {
+class _AnimatedLearn202State extends State<AnimatedLearn202> with TickerProviderStateMixin {
   bool _isVisible=false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _animationController = AnimationController(vsync: this,duration: _ConstDuration.duration);
+
+  }
+
+  late AnimationController _animationController;
+
 
   void _changeVisible(){
     setState(() {
@@ -17,6 +28,8 @@ class _AnimatedLearn202State extends State<AnimatedLearn202> {
       } else {
         _isVisible=false;
       }
+
+      _animationController.animateTo(_isVisible? 1:0);
     });
   }
   
@@ -29,7 +42,12 @@ class _AnimatedLearn202State extends State<AnimatedLearn202> {
       floatingActionButton: FloatingActionButton(onPressed: (){
         _changeVisible();
       }),
-      body: animatedCrossFade(),
+      body: Column(
+        children: [
+          animatedCrossFade(),
+          AnimatedIcon(icon: AnimatedIcons.add_event, progress: _animationController,)
+        ],
+      ),
     );
   }
 
